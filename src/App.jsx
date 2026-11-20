@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useRuta } from './lib/router.js';
 import Cabecera from './componentes/Cabecera.jsx';
 import Pie from './componentes/Pie.jsx';
+import FondoVivo from './componentes/FondoVivo.jsx';
 import Inicio from './paginas/Inicio.jsx';
 import Servicios from './paginas/Servicios.jsx';
 import Catalogo from './paginas/Catalogo.jsx';
@@ -19,6 +20,7 @@ const paginas = {
 export default function App() {
   const r = useRuta();
   const { C, titulo } = paginas[r] || paginas['/'];
+  const interior = r !== '/' && paginas[r];
   useEffect(() => {
     document.title = `${titulo} | ChicVisach`;
     window.scrollTo({ top: 0, behavior: 'instant' });
@@ -27,8 +29,9 @@ export default function App() {
   return (
     <>
       <a className="salto" href="#principal">Saltar al contenido</a>
+      {interior && <FondoVivo />}
       <Cabecera ruta={r} />
-      <main id="principal" tabIndex={-1} key={r}><C /></main>
+      <main id="principal" tabIndex={-1} key={r} className={interior ? 'pagina-viva' : undefined}><C /></main>
       <Pie />
     </>
   );

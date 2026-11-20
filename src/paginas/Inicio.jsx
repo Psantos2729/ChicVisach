@@ -17,6 +17,7 @@ import CircularCarousel from '../reactbits/CircularCarousel/CircularCarousel.jsx
 import AnimatedContent from '../reactbits/AnimatedContent/AnimatedContent.jsx';
 import GlareHover from '../reactbits/GlareHover/GlareHover.jsx';
 import SplitText from '../reactbits/SplitText/SplitText.jsx';
+import MaskedHeading from '../reactbits/MaskedHeading/MaskedHeading.jsx';
 import Particles from '../reactbits/Particles/Particles.jsx';
 
 export default function Inicio() {
@@ -69,6 +70,11 @@ export default function Inicio() {
             </li>
           ))}
         </ul>
+      </section>
+
+      <section className="mascara envoltura seccion" aria-label="Belleza que se nota">
+        <MaskedHeading tag="h2" text="Belleza que se nota" src={pub('fotos/favorito.webp')} align="center"
+          textScale={0.13} weight={700} parallax={24} reveal="rise" />
       </section>
 
       <section className="intro envoltura seccion" aria-labelledby="titulo-que">

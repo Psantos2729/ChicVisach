@@ -91,3 +91,33 @@ main:focus { outline: none; }
   .cabecera__in { grid-template-columns: 1fr auto; }
   .nav { grid-column: 1 / -1; grid-row: 2; }
 }
+
+/* Masked heading */
+.mascara { color: var(--tinta); }
+.mascara h2 { font-family: var(--serif); }
+
+/* Páginas que no son el inicio: fondo oscuro con luz y partículas */
+.fondo-vivo { position: fixed; inset: 0; z-index: 0; pointer-events: none; background: var(--oscuro); }
+.fondo-vivo > div { position: absolute; inset: 0; }
+.pagina-viva { position: relative; z-index: 1; color: var(--sobre-oscuro); --foco: var(--sobre-oscuro); }
+.pagina-viva .campo-oscuro { background: transparent; }
+.pagina-viva .nota { color: var(--sobre-oscuro); opacity: .7; }
+.pagina-viva .hoja, .pagina-viva .serv, .pagina-viva .stepper { color: var(--tinta); --foco: var(--accion); }
+.pagina-viva .hoja .nota, .pagina-viva .serv .nota { color: var(--nota); opacity: 1; }
+.pagina-viva .btn { --accion: var(--acento); --accion-tinta: var(--tinta); }
+.pagina-viva .btn--claro { --accion: var(--papel); }
+.pagina-viva .filtro { border-color: var(--sobre-oscuro); }
+.pagina-viva .filtro[aria-pressed="true"] { background: var(--acento); border-color: var(--acento); color: var(--tinta); }
+.pagina-viva .stepper .filtro { border-color: var(--tinta); }
+.pagina-viva .stepper .filtro[aria-pressed="true"] { background: var(--tinta); color: var(--papel); }
+.pagina-viva .enlace { color: var(--sobre-oscuro); }
+.pagina-viva .listo .enlace, .pagina-viva .stepper .enlace { color: var(--tinta); }
+.pie { position: relative; z-index: 1; }
+
+/* Servicios en 3D */
+.serv3d { display: grid; gap: 1.5rem; justify-items: center; margin-top: 2rem; }
+.serv3d__panel { width: 100%; height: clamp(380px, 60vw, 480px); }
+.serv3d__ayuda { font-size: var(--t-small); opacity: .8; text-align: center; }
+.perfil { position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; padding: var(--margen); background: rgb(8 7 5 / .78); overflow: auto; }
+.perfil__in { display: grid; gap: 1rem; justify-items: center; }
+.perfil .btn { --accion: var(--papel); --accion-tinta: var(--tinta); }
