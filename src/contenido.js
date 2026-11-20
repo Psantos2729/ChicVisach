@@ -52,7 +52,7 @@ export const servicios = [
   { id: 'nanoplastia', nombre: 'Nanoplastia y tratamientos', texto: 'Cabello con brillo, suave y más fácil de peinar. Mira el antes y el después.', foto: 'fotos/dano.webp', alt: 'Cabello dañado junto a cabello liso y brillante' },
   { id: 'balayage', nombre: 'Balayage y diseños de color', texto: 'Color con luz y dimensión, a tu medida. Pregunta por las promociones de color.', foto: 'fotos/favorito.webp', alt: 'Cabello largo con balayage en ondas' },
   { id: 'unas', nombre: 'Uñas: acrílico y gel', texto: 'Uñas en acrílico o gel, con diseños de color y el tono que más te guste.', foto: 'fotos/unas.webp', alt: 'Mano con esmalte rosa claro' },
-  { id: 'productos', nombre: 'Productos de belleza', texto: 'Maquillaje, cuidado de la piel y del cabello que puedes llevarte a casa.', foto: 'fotos/prod-4.webp', alt: 'Paleta de sombras en tonos tierra' }
+  { id: 'productos', nombre: 'Productos de belleza', texto: 'Maquillaje, cuidado de la piel y del cabello que puedes llevarte a casa.', foto: 'fotos/prod-1.webp', alt: 'Paleta de sombras en tonos tierra' }
 ];
 
 export const notaPrecios = 'Duración y precio de cada servicio se confirman por WhatsApp antes de tu cita.';
@@ -74,16 +74,16 @@ export const catalogo = {
   texto: 'Toca una tarjeta para girarla y pedir el producto por WhatsApp. Disponibilidad y precio se confirman con el salón.',
   categorias: ['Todos', 'Maquillaje', 'Piel', 'Fragancia', 'Cabello', 'Uñas'],
   productos: [
-    { id: 1, nombre: 'Labial rojo', categoria: 'Maquillaje', texto: 'Color intenso para labios con presencia.' },
-    { id: 2, nombre: 'Máscara de pestañas', categoria: 'Maquillaje', texto: 'Pestañas largas y definidas.' },
-    { id: 3, nombre: 'Base líquida', categoria: 'Maquillaje', texto: 'Cobertura pareja de larga duración.' },
-    { id: 4, nombre: 'Paleta de sombras', categoria: 'Maquillaje', texto: 'Tonos tierra para ojos de día y de noche.' },
-    { id: 5, nombre: 'Crema hidratante facial', categoria: 'Piel', texto: 'Hidratación diaria con textura ligera.' },
-    { id: 6, nombre: 'Sérum de vitamina C', categoria: 'Piel', texto: 'Cuidado para una piel con luz.' },
-    { id: 7, nombre: 'Protector solar SPF 50', categoria: 'Piel', texto: 'Protección diaria para el rostro.' },
-    { id: 8, nombre: 'Perfume', categoria: 'Fragancia', texto: 'Una fragancia para acompañarte todo el día.' },
-    { id: 9, nombre: 'Champú', categoria: 'Cabello', texto: 'Limpieza suave para mantener tu cabello bonito.' },
-    { id: 10, nombre: 'Esmalte de uñas', categoria: 'Uñas', texto: 'Color y brillo para tus uñas.' }
+    { id: 1, foto: 'fotos/prod-5.webp', nombre: 'Labial rojo', categoria: 'Maquillaje', texto: 'Color intenso para labios con presencia.' },
+    { id: 2, foto: 'fotos/prod-4.webp', nombre: 'Máscara de pestañas', categoria: 'Maquillaje', texto: 'Pestañas largas y definidas.' },
+    { id: 3, foto: 'fotos/prod-2.webp', nombre: 'Base líquida', categoria: 'Maquillaje', texto: 'Cobertura pareja de larga duración.' },
+    { id: 4, foto: 'fotos/prod-1.webp', nombre: 'Paleta de sombras', categoria: 'Maquillaje', texto: 'Tonos tierra para ojos de día y de noche.' },
+    { id: 5, foto: 'fotos/prod-3.webp', nombre: 'Crema hidratante facial', categoria: 'Piel', texto: 'Hidratación diaria con textura ligera.' },
+    { id: 6, foto: 'fotos/prod-7.webp', nombre: 'Sérum de vitamina C', categoria: 'Piel', texto: 'Cuidado para una piel con luz.' },
+    { id: 7, foto: 'fotos/prod-9.webp', nombre: 'Protector solar SPF 50', categoria: 'Piel', texto: 'Protección diaria para el rostro.' },
+    { id: 8, foto: 'fotos/prod-8.webp', nombre: 'Perfume', categoria: 'Fragancia', texto: 'Una fragancia para acompañarte todo el día.' },
+    { id: 9, foto: 'fotos/prod-6.webp', nombre: 'Champú', categoria: 'Cabello', texto: 'Limpieza suave para mantener tu cabello bonito.' },
+    { id: 10, foto: 'fotos/prod-10.webp', nombre: 'Esmalte de uñas', categoria: 'Uñas', texto: 'Color y brillo para tus uñas.' }
   ]
 };
 

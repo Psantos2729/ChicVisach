@@ -28,7 +28,7 @@ export default function Catalogo() {
             <li key={p.id}>
               <AnimatedContent distance={40} duration={0.7} delay={(i % 4) * 0.08}>
                 <TiltedCard
-                  imageSrc={pub(`fotos/prod-${p.id}.webp`)} altText={`${p.nombre}, ${p.texto}`}
+                  imageSrc={pub(p.foto)} altText={`${p.nombre}, ${p.texto}`}
                   containerHeight="440px" containerWidth="100%" imageHeight="440px" imageWidth="100%"
                   rotateAmplitude={9} scaleOnHover={1.03} showTooltip={false} radius={6}
                   backContent={(

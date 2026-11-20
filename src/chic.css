@@ -94,7 +94,8 @@ main:focus { outline: none; }
 
 /* Masked heading */
 .mascara { color: var(--tinta); }
-.mascara h2 { font-family: var(--serif); }
+.mascara__t { font-family: var(--serif); font-weight: 700; font-size: clamp(2.75rem, 1rem + 8vw, 8rem); line-height: 1; text-align: center; letter-spacing: -0.03em; }
+.mascara__t > * { display: inline-block; }
 
 /* Páginas que no son el inicio: fondo oscuro con luz y partículas */
 .fondo-vivo { position: fixed; inset: 0; z-index: 0; pointer-events: none; background: var(--oscuro); }

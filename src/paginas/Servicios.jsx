@@ -8,22 +8,46 @@ import SpecularButton from '../reactbits/SpecularButton/SpecularButton.jsx';
 import DepthCarousel from '../reactbits/DepthCarousel/DepthCarousel.jsx';
 import ProfileCard from '../reactbits/ProfileCard/ProfileCard.jsx';
 
-function Perfil({ s, cerrar }) {
-  const ref = useRef(null);
+const EASE = 'cubic-bezier(0.23, 1, 0.32, 1)';
+const reducido = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* La ficha nace en el lugar de la tarjeta tocada y vuelve a ella al cerrar (animación FLIP). */
+function desdeTarjeta(el, origen) {
+  const a = el.getBoundingClientRect();
+  return `translate(${origen.left + origen.width / 2 - (a.left + a.width / 2)}px, ${origen.top + origen.height / 2 - (a.top + a.height / 2)}px) scale(${origen.width / a.width}, ${origen.height / a.height})`;
+}
+
+function Perfil({ s, origen, cerrar }) {
+  const ref = useRef(null), fondo = useRef(null), saliendo = useRef(false);
+  const salir = () => {
+    if (saliendo.current) return;
+    saliendo.current = true;
+    if (reducido() || !origen) return cerrar();
+    const el = ref.current;
+    const fin = () => cerrar();
+    setTimeout(fin, 460);
+    fondo.current.animate({ opacity: [1, 0] }, { duration: 380, easing: 'ease', fill: 'forwards' });
+    el.animate({ transform: ['none', desdeTarjeta(el, origen)], opacity: [1, 0] }, { duration: 420, easing: EASE, fill: 'forwards' });
+  };
   useEffect(() => {
     const previo = document.activeElement;
-    ref.current?.focus();
-    const f = (e) => e.key === 'Escape' && cerrar();
+    const el = ref.current;
+    el.focus({ preventScroll: true });
+    if (!reducido() && origen) {
+      fondo.current.animate({ opacity: [0, 1] }, { duration: 300, easing: 'ease' });
+      el.animate({ transform: [desdeTarjeta(el, origen), 'none'], opacity: [0, 1] }, { duration: 560, easing: EASE });
+    }
+    const f = (e) => e.key === 'Escape' && salir();
     window.addEventListener('keydown', f);
     return () => { window.removeEventListener('keydown', f); previo?.focus?.(); };
-  }, [cerrar]);
+  }, []);
   return (
-    <div className="perfil" onClick={cerrar}>
+    <div className="perfil" ref={fondo} onClick={salir}>
       <div className="perfil__in" role="dialog" aria-modal="true" aria-label={s.nombre} tabIndex={-1} ref={ref} onClick={(e) => e.stopPropagation()}>
         <ProfileCard avatarUrl={pub(s.foto)} miniAvatarUrl={pub('logo.svg')} name={s.nombre} title={s.texto} handle="chicvisach"
           status="Reserva en línea" statusColor="#C9A24B" contactText="Reservar" theme="dark" holo={0.7} glare={0.5}
           onContactClick={() => { window.location.hash = `#/reservar?servicio=${s.id}`; }} />
-        <button type="button" className="btn btn--chico" onClick={cerrar}>Cerrar</button>
+        <button type="button" className="btn btn--chico" onClick={salir}>Cerrar</button>
       </div>
     </div>
   );
@@ -38,7 +62,7 @@ export default function Servicios() {
     const c = e.target.closest('.depth-carousel__card');
     if (!c || !down.current || Math.hypot(e.clientX - down.current.x, e.clientY - down.current.y) > 6) return;
     const i = [...c.parentElement.children].indexOf(c);
-    if (servicios[i]) setPerfil(servicios[i]);
+    if (servicios[i]) setPerfil({ s: servicios[i], origen: c.getBoundingClientRect() });
   };
   return (
     <>
@@ -78,7 +102,7 @@ export default function Servicios() {
           ))}
         </ul>
       </section>
-      {perfil && <Perfil s={perfil} cerrar={() => setPerfil(null)} />}
+      {perfil && <Perfil s={perfil.s} origen={perfil.origen} cerrar={() => setPerfil(null)} />}
     </>
   );
 }

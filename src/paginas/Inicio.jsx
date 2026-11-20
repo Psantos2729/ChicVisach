@@ -17,7 +17,7 @@ import CircularCarousel from '../reactbits/CircularCarousel/CircularCarousel.jsx
 import AnimatedContent from '../reactbits/AnimatedContent/AnimatedContent.jsx';
 import GlareHover from '../reactbits/GlareHover/GlareHover.jsx';
 import SplitText from '../reactbits/SplitText/SplitText.jsx';
-import MaskedHeading from '../reactbits/MaskedHeading/MaskedHeading.jsx';
+import GradientText from '../reactbits/GradientText/GradientText.jsx';
 import Particles from '../reactbits/Particles/Particles.jsx';
 
 export default function Inicio() {
@@ -73,8 +73,9 @@ export default function Inicio() {
       </section>
 
       <section className="mascara envoltura seccion" aria-label="Belleza que se nota">
-        <MaskedHeading tag="h2" text="Belleza que se nota" src={pub('fotos/favorito.webp')} align="center"
-          textScale={0.13} weight={700} parallax={24} reveal="rise" />
+        <h2 className="mascara__t">
+          <GradientText colors={['#141210', '#8A6A24', '#C9A24B', '#E6C374', '#C9A24B', '#141210']} animationSpeed={7} angle={90}>Belleza que se nota</GradientText>
+        </h2>
       </section>
 
       <section className="intro envoltura seccion" aria-labelledby="titulo-que">
