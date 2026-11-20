@@ -1,0 +1,93 @@
+/* Estilos propios de ChicVisach. Usan los tokens de temas/chicvisach.css */
+.btn--oro { --accion: var(--acento); --accion-tinta: var(--tinta); }
+.btn:disabled { opacity: .4; pointer-events: none; }
+.cabecera { background: var(--oscuro); color: var(--sobre-oscuro); position: sticky; top: 0; z-index: 10; --foco: var(--sobre-oscuro); }
+.cabecera .btn { --accion: var(--acento); --accion-tinta: var(--tinta); }
+.nav a[aria-current="page"] { text-decoration-line: underline; text-decoration-color: var(--acento); }
+main:focus { outline: none; }
+.pagina-cab { padding-block: clamp(3rem, 7vw, 6rem); }
+.pagina-cab .t-lead { margin-top: 1.25rem; max-width: 48ch; color: var(--sobre-oscuro); opacity: .85; }
+.campo-oscuro .enlace { color: var(--sobre-oscuro); }
+
+/* Hero */
+.hero { position: relative; overflow: hidden; }
+.hero__fondo { position: absolute; inset: 0; pointer-events: none; }
+.hero__in { position: relative; display: grid; grid-template-columns: 1.1fr .9fr; gap: var(--relleno); align-items: center; padding-block: clamp(3rem, 7vw, 6rem); }
+.hero__texto { display: grid; gap: 1.5rem; justify-items: start; }
+.hero__hoy { font-size: var(--t-small); color: var(--acento); }
+.hero__h1 { display: grid; }
+.hero__linea { display: flex; flex-wrap: wrap; align-items: baseline; }
+.hero__linea p { margin: 0; }
+.hero__rota { white-space: nowrap; }
+.hero__rotante { color: var(--acento); display: inline-flex; overflow: hidden; }
+.hero__botones { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; align-items: center; }
+.hero__cartas { display: grid; justify-items: center; min-width: 0; overflow: hidden; }
+.velocidad { padding-block: 1.25rem; overflow: hidden; }
+.cifras__fila { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--medianil); list-style: none; padding: 0; text-align: center; }
+.cifras__n { font-family: var(--serif); font-size: var(--t-display); line-height: 1; color: var(--tinta); }
+.intro__t { display: block; max-width: 22ch; margin-bottom: 2.5rem; }
+.intro__rejilla { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--medianil); margin-bottom: 2rem; }
+.mini { position: relative; display: block; aspect-ratio: 4/5; overflow: hidden; text-decoration: none; color: #F5EFE6; background: var(--oscuro); }
+.mini img { width: 100%; height: 100%; object-fit: cover; }
+.mini__t { position: absolute; left: 1rem; bottom: 1rem; right: 1rem; }
+.galeria3d { position: relative; overflow: hidden; }
+.galeria3d__particulas { position: absolute; inset: 0; pointer-events: none; }
+.galeria3d .envoltura, .carrusel3d { position: relative; }
+.curva { padding-block: 1rem; overflow: hidden; }
+.reserva { padding-block: var(--seccion); text-align: center; }
+.reserva h2 { margin-bottom: 1rem; } .reserva p { margin: 0 auto 2rem; max-width: 44ch; }
+
+/* Servicios */
+.serv-lista { display: grid; gap: var(--medianil); list-style: none; padding: 0; margin: 0; }
+.serv { --spotlight-card-bg: var(--papel); background: var(--papel); }
+.serv { display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; overflow: hidden; border-radius: var(--radio); }
+.serv__foto { min-height: 300px; background: var(--oscuro); }
+.serv__foto img { width: 100%; height: 100%; object-fit: cover; }
+.serv__cuerpo { display: grid; gap: 1rem; align-content: center; justify-items: start; padding: var(--relleno); }
+.serv--inv .serv__foto { order: 2; }
+
+/* Catálogo */
+.filtros { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 2rem; }
+.filtro { min-height: 44px; padding: 0 1.125rem; border: 1px solid var(--tinta); border-radius: 999px; font-weight: 500; background: transparent; }
+.filtro[aria-pressed="true"] { background: var(--tinta); color: var(--papel); }
+.catalogo { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr)); gap: var(--relleno) var(--medianil); list-style: none; padding: 0; margin: 0; }
+.catalogo li { min-width: 0; }
+.prod-nombre { display: grid; margin-top: .75rem; font-size: var(--t-lead); line-height: 1.2; }
+.prod-dorso { display: grid; gap: .75rem; align-content: center; justify-items: start; height: 100%; padding: 1.25rem; background: var(--oscuro); color: var(--sobre-oscuro); }
+.prod-dorso__cat { color: var(--acento); font-size: var(--t-small); }
+.prod-dorso h2 { font-size: var(--t-lead); }
+
+/* Reservar */
+.reservar { display: grid; justify-items: center; gap: 1.5rem; }
+.reservar > .stepper { max-width: 100%; }
+.campos { display: grid; gap: .75rem; border: 0; margin: 0; padding: 0; min-width: 0; }
+.campos legend { margin-bottom: .5rem; padding: 0; }
+.opcion { display: flex; align-items: center; gap: .75rem; min-height: 44px; }
+.opcion input { width: 1.25rem; height: 1.25rem; accent-color: var(--acento); }
+.campo { display: grid; gap: .25rem; font-weight: 500; }
+.campo input, .campo textarea { min-height: 44px; padding: .5rem .75rem; border: 1px solid var(--nota); border-radius: var(--radio); background: #fff; color: var(--tinta); width: 100%; }
+.horas { display: flex; flex-wrap: wrap; gap: .5rem; border: 0; padding: 0; margin: 0; }
+.horas legend { margin-bottom: .5rem; padding: 0; font-weight: 500; }
+.resumen { display: grid; gap: .5rem; margin: 0; }
+.resumen div { display: flex; justify-content: space-between; gap: 1rem; border-bottom: 1px solid var(--papel); padding-bottom: .5rem; }
+.resumen dt { color: var(--nota); } .resumen dd { margin: 0; text-align: right; }
+.reservar__botones { display: flex; gap: .75rem; width: min(100%, 760px); justify-content: space-between; }
+.listo { display: grid; gap: 1rem; justify-items: start; padding: 1rem 0; }
+
+/* Contacto */
+.contacto { display: grid; grid-template-columns: 1fr 1fr; gap: var(--medianil); align-items: start; }
+.contacto .hoja { display: grid; gap: 1.25rem; justify-items: start; }
+.horario { display: grid; gap: .25rem; width: 100%; list-style: none; padding: 0; margin: 0; }
+.horario li { display: flex; justify-content: space-between; border-bottom: 1px solid var(--fondo); padding-block: .5rem; }
+
+@media (max-width: 59.99em) {
+  .hero__in, .serv, .contacto { grid-template-columns: minmax(0, 1fr); }
+  .serv--inv .serv__foto { order: 0; }
+  .intro__rejilla { grid-template-columns: minmax(0, 1fr); }
+  .mini { aspect-ratio: 4/3; }
+}
+@media (max-width: 47.99em) {
+  .cifras__fila { grid-template-columns: minmax(0, 1fr); }
+  .cabecera__in { grid-template-columns: 1fr auto; }
+  .nav { grid-column: 1 / -1; grid-row: 2; }
+}
